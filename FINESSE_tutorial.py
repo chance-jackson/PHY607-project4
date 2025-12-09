@@ -10,33 +10,33 @@ finesse.configure(plotting = True)
 ####### Building the Cavity #######################################################
 
 # The first step in any FINESSE simulation is the initialization of your model, the "# optical bench" upon which the simulation takes place. 
-# Initialize the model below, giving it some appropriate name
+# Initialize the model below
 # The syntax is:
 # finesse.Model()
 
-
+model = 
 
 # Now, we can add some components to our model. We'll start with a source/laser.
 # Add a laser to your model, with power P = 1.
 # The syntax is:
 # fc.Laser(name: str, P: float)
 
-
+laser = model.add(...)
 
 # And then some mirrors. In order to properly initialize a mirror, you must specify
-# at least two of three of Reflectivity (R), Transmissivity (T), and Loss (L). These # must add up to 1, or FINESSE will throw an error.
+# at least two of Reflectivity (R), Transmissivity (T), and Loss (L). These # must add up to 1, or FINESSE will throw an error.
 # Add two mirrors to your model, each with R = 0.9 and T = 0.1
 # The syntax is:
 # fc.Mirror(name: str, R: float, T: float, L: float)
 
-model.add(...)
+M1 = model.add(...)
 
 # We then have to connect our components. There's actually quite a few ways to do
 # this in FINESSE, but we'll use the connect command, which automatically populates
 # your model with space components between your specified nodes.
 # Use the connect command to link the laser to M1, and M1 to M2.
 # The syntax is: 
-# finesse.Model.connect(portA, portB, L: float)
+# model.connect(portA, portB, L: float)
 
 
 
